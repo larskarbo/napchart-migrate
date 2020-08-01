@@ -41,6 +41,7 @@ lr.on("line", async function (line) {
 	const chart = JSON.parse(line);
 	// delete chart._id
 	if (!chart.chartData) {
+		lr.resume();
 		console.log("skipping");
 		return;
 	}
